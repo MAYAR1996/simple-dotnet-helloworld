@@ -1,6 +1,7 @@
 pipeline {
-    agent any
-   //    label 'android-poc-slave'
+    agent any {
+      label 'windows'
+    }
     stages {
         stage('run') {
             steps {
