@@ -12,4 +12,6 @@ pipeline {
             steps {
                 sh 'dotnet build'
             }
-    }}
+            }
+    }
+    }
