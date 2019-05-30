@@ -1,19 +1,3 @@
-pipeline {
-    
-    stages {
-        stage('run') {
-            steps {
-                sh 'dotnet run'
-            }
-            
-        }
-        stage('Build') {
-            steps {
-                sh 'dotnet build'
-            }
-            }
-    }
-    }
 #!/usr/bin/env groovy
 
 pipeline {
@@ -21,7 +5,7 @@ pipeline {
       label 'windows'
     }
   environment {
-    MSBUILD = "C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\MSBuild\15.0\Bin"
+    MSBUILD = "C:\Program Files (x86)\Microsoft Visual Studio\2019\Professional\MSBuild\15.0\Bin"
     CONFIG = 'Release'
     PLATFORM = 'x64'
   }
