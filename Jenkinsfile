@@ -23,7 +23,7 @@ pipeline {
     }
    stage('UnitTests') {
         steps {
-            bat "nunit3-console.exe ${env.WORKSPACE}/<TestProject>/bin/Release/<TestProject>.dll --result=nunit3.xml"
+            bat "nunit3-console.exe ${env.WORKSPACE}/<test>/bin/Release/<test>.dll --result=nunit3.xml"
         }
     }
   }
