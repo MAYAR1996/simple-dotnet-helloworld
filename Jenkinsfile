@@ -12,7 +12,7 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-            bat "where git"
+            bat 'wmic computersystem get name'
        // bat "NuGet.exe restore your_project.sln"
        // bat "\"${MSBUILD}\" your_project.sln /p:Configuration=${env.CONFIG};Platform=${env.PLATFORM} /maxcpucount:%NUMBER_OF_PROCESSORS% /nodeReuse:false"
       }
