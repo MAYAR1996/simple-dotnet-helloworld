@@ -46,6 +46,6 @@ pipeline {
    //     steps {
   //          bat "nunit3-console.exe ${env.WORKSPACE}/<test>/bin/Release/<test>.dll --result=nunit3.xml"
  //       }
-  //  }
+    }
   }
 }
