@@ -21,5 +21,10 @@ pipeline {
             bat "\"${MSBUILD}\" test.sln /p:Configuration=${env.CONFIG};Platform=${env.PLATFORM} /maxcpucount:%NUMBER_OF_PROCESSORS% /nodeReuse:false"
       }
     }
+   stage('UnitTests') {
+        steps {
+            bat "nunit3-console.exe ${env.WORKSPACE}/<TestProject>/bin/Release/<TestProject>.dll --result=nunit3.xml"
+        }
+    }
   }
 }
