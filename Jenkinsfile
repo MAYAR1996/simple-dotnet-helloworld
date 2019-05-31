@@ -26,8 +26,8 @@ pipeline {
             steps {
             
             bat returnStatus: true, script: "\"C:/Program Files/dotnet/dotnet.exe\" test \"${workspace}/test.sln\" --logger \"trx;LogFileName=unit_tests.xml\" --no-build"
-            step([$class: 'MSTestPublisher', testResultsFile:"unit_tests.xml", failOnError: true, keepLongStdio: true])
-                      
+            //step([$class: 'MSTestPublisher', testResultsFile:"**/unit_tests.xml", failOnError: true, keepLongStdio: true])
+            nunit testResultsPattern: 'unit_tests.xml'        
                   
             }
         
