@@ -20,8 +20,8 @@ pipeline {
             bat "NuGet.exe restore test.sln"
             bat "\"${MSBUILD}\" test.sln /p:Configuration=${env.CONFIG};Platform=${env.PLATFORM} /maxcpucount:%NUMBER_OF_PROCESSORS% /nodeReuse:false"
       }
-    }stage('Unit test')
-{
+    }
+        stage('Unit test'){
     bat "if not exist \"CodeCoverage\" mkdir CodeCoverage"
     bat "if not exist \"CodeCoverageHTMLReport\" mkdir CodeCoverageHTMLReport"
 
@@ -46,6 +46,6 @@ pipeline {
    //     steps {
   //          bat "nunit3-console.exe ${env.WORKSPACE}/<test>/bin/Release/<test>.dll --result=nunit3.xml"
  //       }
-    }
+  //  }
   }
 }
