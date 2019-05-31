@@ -2,7 +2,7 @@
 
 pipeline {
       agent {
-      label 'windows'
+      label 'windows-slave'
     }
   environment {
     MSBUILD = 'C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Professional\\MSBuild\\Current\\Bin\\MSBuild'
