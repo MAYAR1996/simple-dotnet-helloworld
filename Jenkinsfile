@@ -21,13 +21,6 @@ pipeline {
             bat "\"${MSBUILD}\" test.sln /p:Configuration=${env.CONFIG};Platform=${env.PLATFORM} /maxcpucount:%NUMBER_OF_PROCESSORS% /nodeReuse:false"
       }
     }
-        stage('Unit test'){
-              def MSTest = tool 'MSTest14.0'
-              dir('Tests/Printing.Services.helloworld/bin/Debug')
-              {
-                bat "${MSTest} /testcontainer:Printing.Services.helloworld.dll /resultsfile:Results.trx"
-              }
-            }
         
   // stage('UnitTests') {
    //    steps {
