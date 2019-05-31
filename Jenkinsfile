@@ -12,8 +12,9 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        bat "NuGet.exe restore your_project.sln"
-        bat "\"${MSBUILD}\" your_project.sln /p:Configuration=${env.CONFIG};Platform=${env.PLATFORM} /maxcpucount:%NUMBER_OF_PROCESSORS% /nodeReuse:false"
+            bat "where git"
+       // bat "NuGet.exe restore your_project.sln"
+       // bat "\"${MSBUILD}\" your_project.sln /p:Configuration=${env.CONFIG};Platform=${env.PLATFORM} /maxcpucount:%NUMBER_OF_PROCESSORS% /nodeReuse:false"
       }
     }
   }
