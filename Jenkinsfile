@@ -26,19 +26,13 @@ pipeline {
             steps {
             
             bat returnStatus: true, script: "\"C:/Program Files/dotnet/dotnet.exe\" test \"${workspace}/test.sln\" --logger \"trx;LogFileName=unit_tests.xml\" --no-build"
-                  script{
-                     step([$class: 'MSTestPublisher', testResultsFile:"**/unit_tests.xml", failOnError: true, keepLongStdio: true])
+            step([$class: 'MSTestPublisher', testResultsFile:"**/unit_tests.xml", failOnError: true, keepLongStdio: true])
                       
-                  }
+                  
             }
         
         
         }
         
-  // stage('UnitTests') {
-   //    steps {
-  //         bat "nunit3-console.exe ${env.WORKSPACE}/<test>/bin/Release/<test>.dll --result=nunit3.xml"
-  //     }
- //  }
   }
 }
