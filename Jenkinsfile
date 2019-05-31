@@ -22,30 +22,17 @@ pipeline {
       }
     }
         stage('Unit test'){
-    bat "if not exist \"CodeCoverage\" mkdir CodeCoverage"
-    bat "if not exist \"CodeCoverageHTMLReport\" mkdir CodeCoverageHTMLReport"
-
-    def MSTest = tool 'MSTest14.0'
-    dir('Tests/Printing.Services.Test/bin/Debug')
-    {
-        Printing = bat returnStatus: true, script: "OpenCover.Console.exe -returntargetcode -register:user -target:${MSTest}  -targetargs:\"/nologo /testcontainer:Printing.Services.Test.dll /resultsfile:\\\"%WORKSPACE%\\TestResults_Printing.${BUILD_NUMBER}.trx\\\"\" -mergebyhash -output:\"%WORKSPACE%\\CodeCoverage\\Printing_CodeCoverage.xml\""
-    }
-
-    step([$class: 'MSTestPublisher', testResultsFile:"**/*.trx", failOnError: true, keepLongStdio: true])
-
-    bat "ReportGenerator.exe \"-reports:%WORKSPACE%\\CodeCoverage\\*.xml\" \"-targetdir:%WORKSPACE%\\CodeCoverageHTMLReport\" "
-
-    publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: true, reportDir: "CodeCoverageHTMLReport", reportFiles: 'index.htm', reportName: "CodeCoverage"])
-    // stop the build if a unit test fails
-    if ( (Printing != 0)  ){
-        error("unit test failed")
-    }
-}
+              def MSTest = tool 'MSTest14.0'
+              dir('Tests/Printing.Services.helloworld/bin/Debug')
+              {
+                bat "${MSTest} /testcontainer:Printing.Services.helloworld.dll /resultsfile:Results.trx"
+              }
+            }
         
   // stage('UnitTests') {
-   //     steps {
-  //          bat "nunit3-console.exe ${env.WORKSPACE}/<test>/bin/Release/<test>.dll --result=nunit3.xml"
- //       }
-  //  }
+   //    steps {
+  //         bat "nunit3-console.exe ${env.WORKSPACE}/<test>/bin/Release/<test>.dll --result=nunit3.xml"
+  //     }
+ //  }
   }
 }
