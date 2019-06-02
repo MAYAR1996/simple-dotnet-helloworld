@@ -8,6 +8,7 @@ pipeline {
     MSBUILD = 'C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Professional\\MSBuild\\Current\\Bin\\MSBuild'
     CONFIG = 'Release'
     PLATFORM = 'x64'
+    MSTest = tool 'MSTest14.0'
   }
   stages {
     stage('Build') {
@@ -21,10 +22,18 @@ pipeline {
             bat "\"${MSBUILD}\" test.sln /p:Configuration=${env.CONFIG};Platform=${env.PLATFORM} /maxcpucount:%NUMBER_OF_PROCESSORS% /nodeReuse:false"
       }
     }
-    
+    stage('Unit test')
+{
+   
+    dir('Tests/Printing.Services.Test/bin/Debug')
+    {
+        bat "${MSTest} /testcontainer:Printing.Services.helloworld.dll /resultsfile:Results.trx"
+    }
+    step([$class: 'MSTestPublisher', testResultsFile:"**/*.trx", failOnError: true, keepLongStdio: true])
+}
       stage('UnitTests'){
             steps {
-            
+            bat'dotnet new nunit --force'
             bat returnStatus: true, script: "\"C:/Program Files/dotnet/dotnet.exe\" test \"${workspace}/test.sln\" --logger \"trx;LogFileName=unit_tests.xml\" --no-build"
             //step([$class: 'MSTestPublisher', testResultsFile:"**/unit_tests.xml", failOnError: true, keepLongStdio: true])
             nunit testResultsPattern: 'unit_tests.xml'        
