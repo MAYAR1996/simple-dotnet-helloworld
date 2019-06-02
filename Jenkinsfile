@@ -25,10 +25,10 @@ pipeline {
     stage('Unit test')
 {
    
-    dir('Tests/Printing.Services.Test/bin/Debug')
-    {
+        bat 'cd Tests/Printing.Services.Test/bin/Debug'
+    
         bat "${MSTest} /testcontainer:Printing.Services.helloworld.dll /resultsfile:Results.trx"
-    }
+    
     step([$class: 'MSTestPublisher', testResultsFile:"**/*.trx", failOnError: true, keepLongStdio: true])
 }
       stage('UnitTests'){
