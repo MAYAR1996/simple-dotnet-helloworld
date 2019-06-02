@@ -22,21 +22,13 @@ pipeline {
             bat "\"${MSBUILD}\" test.sln /p:Configuration=${env.CONFIG};Platform=${env.PLATFORM} /maxcpucount:%NUMBER_OF_PROCESSORS% /nodeReuse:false"
       }
     }
-    stage('Unit test')
-{
-   
-        bat 'cd Tests/Printing.Services.Test/bin/Debug'
     
-        bat "${MSTest} /testcontainer:Printing.Services.helloworld.dll /resultsfile:Results.trx"
-    
-    step([$class: 'MSTestPublisher', testResultsFile:"**/*.trx", failOnError: true, keepLongStdio: true])
-}
       stage('UnitTests'){
             steps {
             bat'dotnet new nunit --force'
             bat returnStatus: true, script: "\"C:/Program Files/dotnet/dotnet.exe\" test \"${workspace}/test.sln\" --logger \"trx;LogFileName=unit_tests.xml\" --no-build"
             //step([$class: 'MSTestPublisher', testResultsFile:"**/unit_tests.xml", failOnError: true, keepLongStdio: true])
-            nunit-console nunit.tests.csproj
+            nunit-console nunit.test.csproj
             nunit testResultsPattern: 'unit_tests.xml'        
                   
             }
