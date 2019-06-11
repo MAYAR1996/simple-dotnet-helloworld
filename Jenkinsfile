@@ -26,7 +26,7 @@ pipeline {
     
      stage('UnitTests'){
           steps {
-             bat'dotnet new nunit --force'
+           //  bat'dotnet new nunit --force'
             // bat returnStatus: true, script: "\"C:/Program Files/dotnet/dotnet.exe\" test \"${workspace}/test.sln\" --logger \"trx;LogFileName=unit_tests.xml\" --no-build"
            // step([$class: 'MSTestPublisher', testResultsFile:"**/unit_tests.xml", failOnError: true, keepLongStdio: true])
           //  nunit-console nunit.test.csproj
