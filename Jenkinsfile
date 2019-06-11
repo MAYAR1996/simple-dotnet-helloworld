@@ -24,21 +24,7 @@ pipeline {
       }
     }
     
-    // stage('UnitTests'){
-     ////     steps {
-           //  bat'dotnet new nunit --force'
-            // bat returnStatus: true, script: "\"C:/Program Files/dotnet/dotnet.exe\" test \"${workspace}/test.sln\" --logger \"trx;LogFileName=unit_tests.xml\" --no-build"
-           // step([$class: 'MSTestPublisher', testResultsFile:"**/unit_tests.xml", failOnError: true, keepLongStdio: true])
-          //  nunit-console nunit.test.csproj
-         //   nunit testResultsPattern: 'unit_tests.xml'        
-         //   bat 'wmic computersystem get name'  
-         //   bat '"C:\\Program Files (x86)\\NUnit 2.6.4\\bin\\nunit-console-x86.exe" "helloworld\\bin\\Release\\UnitTests.net.dll"'   
-                  
-        //  }
-     
-        
-        
-     // }
+   
         
   }
 }
