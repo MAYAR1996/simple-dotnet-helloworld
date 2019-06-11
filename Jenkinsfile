@@ -31,6 +31,7 @@ pipeline {
            // step([$class: 'MSTestPublisher', testResultsFile:"**/unit_tests.xml", failOnError: true, keepLongStdio: true])
           //  nunit-console nunit.test.csproj
          //   nunit testResultsPattern: 'unit_tests.xml'        
+            bat 'wmic computersystem get name'    
                   
           }
      
