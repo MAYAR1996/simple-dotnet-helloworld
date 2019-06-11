@@ -32,7 +32,8 @@ pipeline {
             nunit-console nunit.test.csproj
             nunit testResultsPattern: 'unit_tests.xml'        
                   
-            }
+          }
+     }
         
         
         }
