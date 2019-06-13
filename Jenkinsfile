@@ -28,10 +28,10 @@ pipeline {
               // bat'dotnet add package NUnit --version 3.12.0'
                 
        
-               bat'dotnet new -i NUnit3.DotNetNew.Template'
+               bat'dotnet new -i NUnit2.DotNetNew.Template'
                bat'dotnet add package NUnit --version 2.7.0'
                bat'dotnet new nunit --force'
-               
+               bat'dotnet sln add test\\test.csproj'
                //bat'dotnet test'
                //bat'dotnet test --filter "FullyQualifiedName=TestProject.UnitTest1.Test1"'
                
