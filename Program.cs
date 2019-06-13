@@ -30,7 +30,8 @@ using System;
        public static void Main()
        {
           string name;
-          name=Program.GetEmployeeName(1);
+          Program home =new Program();
+          name=home.GetEmployeeName(1);
          Console.WriteLine(name);
           
        }
