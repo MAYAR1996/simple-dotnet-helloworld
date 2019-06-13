@@ -1,14 +1,15 @@
 using System;
 
 
-namespace HelloWorldSample
-{
+//namespace HelloWorldSample
+//{
    // public static class Program
     //{
       //  public static void Main()
        // {
        //     Console.WriteLine("Hello World!");
        // }
+   public class HomeController{
         public string GetEmployeeName(int empId)
         {
             string name;
@@ -26,5 +27,6 @@ namespace HelloWorldSample
             }
             return name;
         }
+   }
    // }
-}
+//}
