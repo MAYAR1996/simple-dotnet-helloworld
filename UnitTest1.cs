@@ -1,4 +1,5 @@
 using Nunit.FrameWork;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using HelloWorldSample;
 
 namespace Tests
