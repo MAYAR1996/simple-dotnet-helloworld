@@ -25,7 +25,7 @@ pipeline {
     }
       stage('UnitTests'){
          steps {
-              //bat'dotnet new nunit --force'
+              bat'dotnet new nunit --force'
               //bat'dotnet sln add TestProject\\helloworld.csproj'
               //bat'dotnet test'
               //bat'dotnet test --filter "FullyQualifiedName=TestProject.UnitTest1.Test1"'
