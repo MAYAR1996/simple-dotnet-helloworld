@@ -28,7 +28,7 @@ pipeline {
               // bat'dotnet add package NUnit --version 3.12.0'
                 
        
-               bat'dotnet new -i NUnit2.DotNetNew.Template'
+               bat'dotnet new -i NUnit3.DotNetNew.Template'
                bat'dotnet add package NUnit --version 2.6.4'
                //bat'dotnet new nunit --force'
                bat'dotnet sln add test\\test.csproj'
