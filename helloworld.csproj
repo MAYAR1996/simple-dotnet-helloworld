@@ -5,8 +5,8 @@
     <OutputType>Exe</OutputType>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Nunit" Version="2.6.4"/>
-    <PackageReference Include="Nunit3TestAdapter" Version="2.6.4"/>
+    <PackageReference Include="Nunit" Version="3.9.0"/>
+    <PackageReference Include="Nunit3TestAdapter" Version="3.9.0"/>
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.5.0"/>
     </ItemGroup>
 
