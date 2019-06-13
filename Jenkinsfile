@@ -26,11 +26,14 @@ pipeline {
       stage('UnitTests'){
          steps {
               // bat'dotnet add package NUnit --version 3.12.0'
-              //bat'dotnet new nunit --force'
-              
-              //bat'dotnet sln add TestProject\\helloworld.csproj'
-              //bat'dotnet test'
-              //bat'dotnet test --filter "FullyQualifiedName=TestProject.UnitTest1.Test1"'
+                
+               bat'dotnet new sln -n MVCUnittest'
+               bat'dotnet new -i NUnit3.DotNetNew.Template'
+               bat'dotnet add package NUnit --version 3.12.0'
+               bat'dotnet new nunit --force'
+               bat'dotnet sln add TestProject\\helloworld.csproj'
+               bat'dotnet test'
+               bat'dotnet test --filter "FullyQualifiedName=TestProject.UnitTest1.Test1"'
                
             // bat returnStatus: true, script: "\"C:/Program Files/dotnet/dotnet.exe\" test \"${workspace}/test.sln\" --logger \"trx;LogFileName=unit_tests.xml\" --no-build"
            // step([$class: 'MSTestPublisher', testResultsFile:"**/unit_tests.xml", failOnError: true, keepLongStdio: true])
