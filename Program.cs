@@ -5,9 +5,26 @@ namespace HelloWorldSample
 {
     public static class Program
     {
-        public static void Main()
+      //  public static void Main()
+       // {
+       //     Console.WriteLine("Hello World!");
+       // }
+        public string GetEmployeeName(int empId)
         {
-            Console.WriteLine("Hello World!");
+            string name;
+            if (empId == 1)
+            {
+                name="mayar";
+            }
+            else if (empId == 2)
+            {
+                name="Aya";
+            }
+            else 
+            {
+                name="Not found"
+            }
+            return name;
         }
     }
 }
