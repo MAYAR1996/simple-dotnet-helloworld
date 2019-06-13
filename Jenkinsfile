@@ -26,7 +26,7 @@ pipeline {
       stage('UnitTests'){
          steps {
               // bat'dotnet add package NUnit --version 3.12.0'
-              bat'dotnet new nunit --force'
+              //bat'dotnet new nunit --force'
               
               //bat'dotnet sln add TestProject\\helloworld.csproj'
               //bat'dotnet test'
@@ -38,7 +38,7 @@ pipeline {
                //Release\\UnitTests.net.dll"'  
            //   nunit-console nunit.test.csproj
            //   nunit testResultsPattern: 'unit_tests.xml'        
-         //   bat 'wmic computersystem get name'  
+           bat 'wmic computersystem get name'  
                   
          }
     
