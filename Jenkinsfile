@@ -33,7 +33,7 @@ pipeline {
                //bat'dotnet new nunit --force'
                bat'dotnet sln add test\\test.csproj'
                 bat'dotnet test'
-                bat'dotnet test --filter "FullyQualifiedName=test.UnitTest1.Test1"'
+                //bat'dotnet test --filter "FullyQualifiedName=test.UnitTest1.Test1"'
                
             // bat returnStatus: true, script: "\"C:/Program Files/dotnet/dotnet.exe\" test \"${workspace}/test.sln\" --logger \"trx;LogFileName=unit_tests.xml\" --no-build"
            // step([$class: 'MSTestPublisher', testResultsFile:"**/unit_tests.xml", failOnError: true, keepLongStdio: true])
