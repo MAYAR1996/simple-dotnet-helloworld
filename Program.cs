@@ -1,7 +1,7 @@
 using System;
 
 
-//namespace HelloWorldSample
+  namespace HelloWorldSample
 //{
    // public static class Program
     //{
@@ -9,15 +9,8 @@ using System;
        // {
        //     Console.WriteLine("Hello World!");
        // }
-   public class HomeController{
-       public static void Main()
-       {
-          string name;
-          name=HomeController.GetEmployeeName(1);
-         Console.WriteLine(name);
-          
-       }
-        public string GetEmployeeName(int empId)
+   public class Program{
+      public string GetEmployeeName(int empId)
         {
             string name;
             if (empId == 1)
@@ -34,6 +27,14 @@ using System;
             }
             return name;
         }
+       public static void Main()
+       {
+          string name;
+          name=Program.GetEmployeeName(1);
+         Console.WriteLine(name);
+          
+       }
+        
    }
    // }
 //}
