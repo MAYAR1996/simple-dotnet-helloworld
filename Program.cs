@@ -13,7 +13,7 @@ using System;
        public static void Main()
        {
           string name;
-          name=GetEmployeeName(1);
+          name=HomeController.GetEmployeeName(1);
          Console.WriteLine(name);
           
        }
