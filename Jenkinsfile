@@ -32,7 +32,7 @@ pipeline {
                bat'dotnet add package NUnit --version 3.12.0'
                //bat'dotnet new nunit --force'
                bat'dotnet sln add test\\test.csproj'
-                bat'dotnet test --framework net45'
+                bat'dotnet test --framework netcoreapp2.0'
                // bat'dotnet test'
                 //bat'dotnet test --filter "FullyQualifiedName=test.UnitTest1.Test1"'
                
