@@ -32,7 +32,8 @@ pipeline {
                bat'dotnet add package NUnit --version 3.9.0'
                //bat'dotnet new nunit --force'
                bat'dotnet sln add test\\test.csproj'
-                bat'dotnet test'
+                bat'dotnet test --framework net45'
+               // bat'dotnet test'
                 //bat'dotnet test --filter "FullyQualifiedName=test.UnitTest1.Test1"'
                
             // bat returnStatus: true, script: "\"C:/Program Files/dotnet/dotnet.exe\" test \"${workspace}/test.sln\" --logger \"trx;LogFileName=unit_tests.xml\" --no-build"
